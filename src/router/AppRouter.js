@@ -32,7 +32,6 @@ const AppRouter = () => {
 			})
 			.join("|");
 	}
-	console.log(categories);
 
 	const dispatch = useDispatch();
 	useEffect(() => {
