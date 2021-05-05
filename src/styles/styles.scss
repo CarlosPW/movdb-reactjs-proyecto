@@ -1,0 +1,25 @@
+@import "./responsive";
+// Components
+@import "./components/navbar";
+@import "./components/headerCarousel";
+@import "./components/movieDisplay";
+@import "./components/detailPage";
+@import "./components/footer";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: rgb(47, 47, 47);
+}
+
+.notfoundcontainer {
+	height: calc(100vh - 200px);
+}
+
+.height_view {
+	height: calc(100vh - 250px);
+}
