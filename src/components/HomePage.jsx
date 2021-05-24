@@ -27,8 +27,8 @@ const HomePage = () => {
 		<>
 			<HeaderCarousel />
 
-			<div className="homepage_moviedisplay_container">
-				<h2 id="title" className="text-light text-center">
+			<div id="category_title" className="homepage_moviedisplay_container">
+				<h2 className="text-light text-center">
 					{location.pathname.split("/").includes("categories") ? categoryName : "Popular"}
 					<span className="text-danger">.</span>
 				</h2>

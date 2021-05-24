@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link, NavLink, useHistory } from "react-router-dom";
+import ScrollIntoView from "react-scroll-into-view";
 import { useFetch } from "../../hooks/useFetch/useFetch";
 
 const Navbar = () => {
@@ -57,12 +58,14 @@ const Navbar = () => {
 									: data.genres.map((genre) => {
 											return (
 												<li key={genre.id}>
-													<NavLink
-														className="dropdown-item"
-														to={`/categories/${genre.id}/${genre.name}`}
-													>
-														{genre.name}
-													</NavLink>
+													<ScrollIntoView selector="#category_title">
+														<NavLink
+															className="dropdown-item"
+															to={`/categories/${genre.id}/${genre.name}`}
+														>
+															{genre.name}
+														</NavLink>
+													</ScrollIntoView>
 												</li>
 											);
 									  })}

@@ -6,18 +6,18 @@ module.exports = {
 	mode: "production",
 	entry: "./src/index.js",
 	output: {
-		path: path.resolve(__dirname, "public"),
+		path: path.join(__dirname, "public/"),
 		filename: "bundle.js",
 		publicPath: "/",
 	},
 	devServer: {
 		historyApiFallback: true,
-		// contentBase: path.resolve(__dirname, "public"),
+		contentBase: path.resolve(__dirname, "public/"),
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: "public/index.html",
-		}),
+		// new HtmlWebpackPlugin({
+		// 	template: "public/index.html",
+		// }),
 		new MiniCssExtractPlugin(),
 	],
 	module: {
