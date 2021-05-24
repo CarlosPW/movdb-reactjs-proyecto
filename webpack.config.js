@@ -1,14 +1,25 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	mode: "production",
-	entry: ["babel-polyfill", "./src/index.js"],
+	entry: "./src/index.js",
 	output: {
-		path: path.join(__dirname, "public"),
+		path: path.resolve(__dirname, "public"),
 		filename: "bundle.js",
+		publicPath: "/",
 	},
-	plugins: [new MiniCssExtractPlugin()],
+	devServer: {
+		historyApiFallback: true,
+		// contentBase: path.resolve(__dirname, "public"),
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: "public/index.html",
+		}),
+		new MiniCssExtractPlugin(),
+	],
 	module: {
 		rules: [
 			{
@@ -58,7 +69,4 @@ module.exports = {
 	},
 	//devtool (dev): 'eval-cheap-module-source-map',
 	devtool: "source-map",
-	devServer: {
-		contentBase: path.join(__dirname, "public"),
-	},
 };
