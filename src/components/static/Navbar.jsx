@@ -13,7 +13,7 @@ const Navbar = () => {
 	const inputRef = useRef(null);
 
 	return (
-		<nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+		<nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top-md ">
 			<div className="container-fluid ">
 				<Link to="/" className="navbar-brand" href="#">
 					Mov<span className="text-danger">DB</span>.
